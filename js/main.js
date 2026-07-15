@@ -21,3 +21,14 @@ tabs.forEach((tab) => {
     });
   });
 });
+
+const signupForm = document.querySelector("[data-signup-form]");
+const formMessage = document.querySelector("[data-form-message]");
+
+if (signupForm && formMessage) {
+  signupForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    formMessage.textContent = "Solicitud preparada. Falta conectar el envio real del formulario.";
+    signupForm.reset();
+  });
+}

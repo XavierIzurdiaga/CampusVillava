@@ -290,7 +290,8 @@ h3 {
 }
 
 .split,
-.kids-layout {
+.kids-layout,
+.signup-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
   gap: 28px;
@@ -378,6 +379,105 @@ h3 {
   display: block;
 }
 
+.form-card {
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 10px 28px rgba(23, 33, 29, 0.06);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+label {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+  color: var(--ink);
+  font-weight: 800;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  min-height: 46px;
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  background: #fbfbf8;
+  font: inherit;
+  font-weight: 600;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid rgba(28, 140, 88, 0.18);
+  border-color: var(--field);
+}
+
+.consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-weight: 700;
+}
+
+.consent input {
+  width: 18px;
+  min-height: 18px;
+  margin-top: 4px;
+}
+
+.form-message {
+  min-height: 24px;
+  margin: 16px 0 0;
+  color: var(--field-dark);
+  font-weight: 800;
+}
+
+.signup-aside {
+  position: sticky;
+  top: 100px;
+}
+
+.steps {
+  display: grid;
+  gap: 14px;
+}
+
+.steps div {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.steps strong {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  color: var(--white);
+  background: var(--field);
+}
+
+.aside-note {
+  margin: 22px 0 0;
+  color: var(--muted);
+}
+
 .footer {
   display: flex;
   flex-wrap: wrap;
@@ -436,8 +536,13 @@ h3 {
   .values,
   .split,
   .kids-layout,
+  .signup-layout,
   .schedule-band {
     grid-template-columns: 1fr;
+  }
+
+  .signup-aside {
+    position: static;
   }
 
   .section {
@@ -469,7 +574,12 @@ h3 {
   .insurance-grid article,
   .values article,
   .panel,
-  .notice {
+  .notice,
+  .form-card {
     padding: 22px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
   }
 }

@@ -22,13 +22,28 @@ tabs.forEach((tab) => {
   });
 });
 
-const signupForm = document.querySelector("[data-signup-form]");
-const formMessage = document.querySelector("[data-form-message]");
+const contactForm = document.querySelector("[data-contact-form]");
+const contactMessage = document.querySelector("[data-contact-message]");
 
-if (signupForm && formMessage) {
-  signupForm.addEventListener("submit", (event) => {
+if (contactForm && contactMessage) {
+  contactForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    formMessage.textContent = "Solicitud preparada. Falta conectar el envio real del formulario.";
-    signupForm.reset();
+
+    const formData = new FormData(contactForm);
+    const nombre = formData.get("nombre");
+    const telefono = formData.get("telefono") || "No indicado";
+    const email = formData.get("email");
+    const asunto = formData.get("asunto");
+    const mensaje = formData.get("mensaje");
+    const body = [
+      `Nombre: ${nombre}`,
+      `Teléfono: ${telefono}`,
+      `Correo electrónico: ${email}`,
+      "",
+      mensaje,
+    ].join("\n");
+
+    window.location.href = `mailto:campusvillava@gmail.com?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(body)}`;
+    contactMessage.textContent = "Se abrirá tu aplicación de correo con el mensaje preparado.";
   });
 }

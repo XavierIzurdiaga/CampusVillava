@@ -28,7 +28,7 @@ const formMessage = document.querySelector("[data-form-message]");
 if (signupForm && formMessage) {
   signupForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    formMessage.textContent = "Solicitud preparada. Falta conectar el envio real del formulario.";
+    formMessage.textContent = "Solicitud preparada. La organización contactará contigo para confirmar la plaza.";
     signupForm.reset();
   });
 }

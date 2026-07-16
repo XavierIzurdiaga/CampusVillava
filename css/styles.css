@@ -289,6 +289,10 @@ h3 {
   padding-bottom: 20px;
 }
 
+.contact-hero {
+  padding-bottom: 0;
+}
+
 .split,
 .kids-layout,
 .signup-layout {
@@ -296,6 +300,14 @@ h3 {
   grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
   gap: 28px;
   align-items: start;
+}
+
+.contact-section {
+  padding-top: 44px;
+}
+
+.contact-form-section {
+  padding-top: 0;
 }
 
 .check-list {

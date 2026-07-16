@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Villava Fútbol | Contacto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html" aria-label="Campus Villava Fútbol">
+        <span class="brand-mark">CV</span>
+        <span>Campus Villava</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links" data-nav-links>
+        <a href="index.html">Inicio</a>
+        <a href="quienes-somos.html">Quiénes somos</a>
+        <a href="seguro.html">Nuestro seguro</a>
+        <a class="active" href="contacto.html">Contacto</a>
+        <a href="pequenos.html">Los más pequeños</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero compact contact-hero">
+      <p class="eyebrow">Contacto</p>
+      <p>Estamos disponibles para resolver dudas sobre plazas, grupos, horarios, documentación o cualquier detalle que necesites antes del campus.</p>
+    </section>
+
+    <section class="section signup-layout contact-section">
+      <div class="panel">
+        <h2>Información directa</h2>
+        <p>Para cualquier consulta, puedes llamar a cualquiera de los responsables o escribir al correo del campus. Te responderemos lo antes posible para ayudarte con la información que necesites.</p>
+        <ul class="check-list">
+          <li>Confirmación de plazas disponibles.</li>
+          <li>Información sobre grupos y edades.</li>
+          <li>Dudas sobre horarios, material o documentación.</li>
+          <li>Comunicación de alergias o necesidades especiales.</li>
+        </ul>
+      </div>
+
+      <aside class="panel signup-aside">
+        <h2>Contacto</h2>
+        <div class="steps">
+          <div><strong>1</strong><span>Xabier Igarreta · 639 589 128</span></div>
+          <div><strong>2</strong><span>Mikel Bengochea · 666 289 125</span></div>
+          <div><strong>3</strong><span>Artzai Oñate · 666 863 690</span></div>
+          <div><strong>4</strong><span>Andoni Sánchez · 684 368 280</span></div>
+        </div>
+        <p class="aside-note">Correo electrónico: campusvillava@gmail.com</p>
+        <p class="aside-note">Dirección: Travesía Karrobide 1, Villava, 31610, Navarra.</p>
+      </aside>
+    </section>
+
+    <section class="section contact-form-section">
+      <form class="form-card" data-contact-form>
+        <h2>Enviar un correo</h2>
+        <div class="form-grid">
+          <label>
+            Nombre
+            <input type="text" name="nombre" placeholder="Nombre y apellidos" required>
+          </label>
+          <label>
+            Teléfono
+            <input type="tel" name="telefono" placeholder="600 000 000">
+          </label>
+          <label>
+            Correo electrónico
+            <input type="email" name="email" placeholder="familia@email.com" required>
+          </label>
+          <label>
+            Asunto
+            <input type="text" name="asunto" placeholder="Consulta sobre el campus" required>
+          </label>
+        </div>
+        <label>
+          Mensaje
+          <textarea name="mensaje" rows="5" placeholder="Escribe aquí tu consulta" required></textarea>
+        </label>
+        <button class="button primary" type="submit">Enviar correo</button>
+        <p class="form-message" data-contact-message aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Campus Villava Fútbol</p>
+    <p>III edición del Campus de Fútbol de Villava · Del 20 al 30 de julio</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

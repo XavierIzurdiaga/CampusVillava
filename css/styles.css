@@ -246,9 +246,9 @@ h3 {
   background: #f7f8f3;
 }
 
-.intro-card-image-contain {
-  object-fit: contain;
-  padding: 16px;
+.intro-card-image-logos {
+  object-fit: cover;
+  object-position: center;
 }
 
 .intro-card-body {

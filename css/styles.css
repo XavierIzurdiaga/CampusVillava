@@ -358,6 +358,153 @@ h3 {
   padding-top: 0;
 }
 
+.section-heading {
+  max-width: 760px;
+  margin-bottom: 28px;
+}
+
+.section-heading p:last-child {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.sponsors-section {
+  padding-top: 0;
+}
+
+.sponsor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+}
+
+.sponsor-card {
+  display: grid;
+  place-items: center;
+  min-height: 132px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 10px 28px rgba(23, 33, 29, 0.06);
+  cursor: pointer;
+  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.sponsor-card:hover,
+.sponsor-card:focus-visible {
+  border-color: rgba(28, 140, 88, 0.55);
+  box-shadow: 0 16px 34px rgba(23, 33, 29, 0.12);
+  transform: translateY(-2px);
+}
+
+.sponsor-card:focus-visible,
+.sponsor-modal-close:focus-visible,
+.sponsor-modal-nav:focus-visible {
+  outline: 3px solid rgba(240, 90, 60, 0.32);
+  outline-offset: 3px;
+}
+
+.sponsor-card img {
+  width: 100%;
+  max-width: 170px;
+  height: 86px;
+  object-fit: contain;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.sponsor-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.sponsor-modal.open {
+  display: flex;
+}
+
+.sponsor-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(23, 33, 29, 0.76);
+}
+
+.sponsor-modal-dialog {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 54px minmax(0, 760px) 54px;
+  align-items: center;
+  gap: 16px;
+  width: min(100%, 980px);
+}
+
+.sponsor-modal-content {
+  display: grid;
+  place-items: center;
+  min-height: min(68vh, 620px);
+  margin: 0;
+  padding: 34px;
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.sponsor-modal-content img {
+  width: 100%;
+  max-height: min(54vh, 460px);
+  object-fit: contain;
+}
+
+.sponsor-modal-content figcaption {
+  margin-top: 18px;
+  color: var(--ink);
+  font-weight: 800;
+  text-align: center;
+}
+
+.sponsor-modal-close,
+.sponsor-modal-nav {
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 8px;
+  color: var(--white);
+  background: var(--field-dark);
+  box-shadow: 0 10px 24px rgba(23, 33, 29, 0.24);
+  cursor: pointer;
+}
+
+.sponsor-modal-close {
+  position: absolute;
+  top: -58px;
+  right: 70px;
+  width: 46px;
+  height: 46px;
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.sponsor-modal-nav {
+  width: 54px;
+  height: 54px;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.sponsor-modal-close:hover,
+.sponsor-modal-nav:hover {
+  background: var(--accent);
+}
+
 .insurance-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -582,6 +729,24 @@ textarea:focus {
     padding: 44px 0;
   }
 
+  .sponsors-section {
+    padding-top: 0;
+  }
+
+  .sponsor-modal-dialog {
+    grid-template-columns: 48px minmax(0, 1fr) 48px;
+    gap: 10px;
+  }
+
+  .sponsor-modal-content {
+    min-height: min(66vh, 520px);
+    padding: 24px;
+  }
+
+  .sponsor-modal-close {
+    right: 58px;
+  }
+
   .schedule-band {
     padding: 28px;
     margin-bottom: 44px;
@@ -617,6 +782,54 @@ textarea:focus {
 
   .intro-card-image {
     height: 180px;
+  }
+
+  .sponsor-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sponsor-card {
+    min-height: 112px;
+    padding: 14px;
+  }
+
+  .sponsor-card img {
+    height: 72px;
+  }
+
+  .sponsor-modal {
+    padding: 14px;
+  }
+
+  .sponsor-modal-dialog {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .sponsor-modal-content {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    min-height: min(62vh, 440px);
+    padding: 20px;
+  }
+
+  .sponsor-modal-content img {
+    max-height: min(45vh, 340px);
+  }
+
+  .sponsor-modal-close {
+    top: 10px;
+    right: 10px;
+    width: 42px;
+    height: 42px;
+    color: var(--ink);
+    background: var(--white);
+  }
+
+  .sponsor-modal-nav {
+    grid-row: 2;
+    width: 100%;
+    height: 48px;
   }
 
   .form-grid {

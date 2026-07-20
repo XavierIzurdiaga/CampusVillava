@@ -314,6 +314,22 @@ h3 {
   padding-bottom: 0;
 }
 
+.inscription-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  align-items: center;
+  gap: 42px;
+}
+
+.inscription-hero-image {
+  width: 280px;
+  aspect-ratio: 1;
+  border: 10px solid var(--white);
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: var(--shadow);
+}
+
 .split,
 .kids-layout,
 .signup-layout {
@@ -325,6 +341,41 @@ h3 {
 
 .contact-section {
   padding-top: 44px;
+}
+
+.signup-section {
+  padding-top: 44px;
+}
+
+.signup-main p {
+  max-width: 680px;
+  color: var(--muted);
+}
+
+.signup-actions {
+  margin-top: 24px;
+}
+
+.payment-card {
+  color: var(--white);
+  background: var(--field-dark);
+}
+
+.payment-card .eyebrow,
+.payment-card p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.iban {
+  margin: 22px 0 0;
+  padding: 18px;
+  border-radius: 8px;
+  color: var(--ink) !important;
+  background: var(--white);
+  font-size: clamp(1.05rem, 2.4vw, 1.45rem);
+  font-weight: 800;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
 }
 
 .contact-form-section {
@@ -743,6 +794,15 @@ textarea:focus {
 
   .hero-visual {
     min-height: 250px;
+  }
+
+  .inscription-hero {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .inscription-hero-image {
+    width: min(100%, 260px);
   }
 
   .intro-grid,

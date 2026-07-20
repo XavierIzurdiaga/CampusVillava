@@ -11,14 +11,14 @@ if (toggle && navLinks) {
 const sponsorButtons = Array.from(document.querySelectorAll("[data-sponsor-index]"));
 const sponsorModal = document.querySelector("[data-sponsor-modal]");
 const sponsorModalImage = document.querySelector("[data-sponsor-modal-image]");
-const sponsorModalTitle = document.querySelector("[data-sponsor-modal-title]");
 const sponsorCloseButtons = document.querySelectorAll("[data-sponsor-close]");
 const sponsorPrevButton = document.querySelector("[data-sponsor-prev]");
 const sponsorNextButton = document.querySelector("[data-sponsor-next]");
 
-if (sponsorButtons.length && sponsorModal && sponsorModalImage && sponsorModalTitle) {
+if (sponsorButtons.length && sponsorModal && sponsorModalImage) {
   let currentSponsorIndex = 0;
   let lastFocusedSponsor = null;
+  let isSliding = false;
 
   const sponsors = sponsorButtons.map((button) => {
     const image = button.querySelector("img");
@@ -29,18 +29,55 @@ if (sponsorButtons.length && sponsorModal && sponsorModalImage && sponsorModalTi
     };
   });
 
-  const showSponsor = (index) => {
-    currentSponsorIndex = (index + sponsors.length) % sponsors.length;
+  const updateSponsorNav = () => {
+    if (sponsorPrevButton) {
+      sponsorPrevButton.disabled = currentSponsorIndex === 0;
+    }
+
+    if (sponsorNextButton) {
+      sponsorNextButton.disabled = currentSponsorIndex === sponsors.length - 1;
+    }
+  };
+
+  const setSponsor = (index) => {
+    currentSponsorIndex = index;
     const sponsor = sponsors[currentSponsorIndex];
 
     sponsorModalImage.src = sponsor.src;
     sponsorModalImage.alt = sponsor.alt;
-    sponsorModalTitle.textContent = sponsor.alt;
+    updateSponsorNav();
+  };
+
+  const showSponsor = (index) => {
+    if (index < 0 || index >= sponsors.length || index === currentSponsorIndex || isSliding) {
+      return;
+    }
+
+    isSliding = true;
+    const direction = index > currentSponsorIndex ? "right" : "left";
+    const outClass = direction === "right" ? "slide-out-left" : "slide-out-right";
+    const inClass = direction === "right" ? "slide-in-right" : "slide-in-left";
+
+    sponsorModalImage.classList.add(outClass);
+
+    window.setTimeout(() => {
+      sponsorModalImage.classList.remove(outClass);
+      sponsorModalImage.classList.add(inClass);
+      setSponsor(index);
+
+      window.requestAnimationFrame(() => {
+        sponsorModalImage.classList.remove(inClass);
+      });
+    }, 180);
+
+    window.setTimeout(() => {
+      isSliding = false;
+    }, 420);
   };
 
   const openSponsorModal = (index, trigger) => {
     lastFocusedSponsor = trigger;
-    showSponsor(index);
+    setSponsor(index);
     sponsorModal.classList.add("open");
     sponsorModal.setAttribute("aria-hidden", "false");
     document.body.classList.add("modal-open");
@@ -54,7 +91,11 @@ if (sponsorButtons.length && sponsorModal && sponsorModalImage && sponsorModalTi
     sponsorModal.classList.remove("open");
     sponsorModal.setAttribute("aria-hidden", "true");
     document.body.classList.remove("modal-open");
-    sponsorModalImage.removeAttribute("src");
+    window.setTimeout(() => {
+      if (!sponsorModal.classList.contains("open")) {
+        sponsorModalImage.removeAttribute("src");
+      }
+    }, 220);
 
     if (lastFocusedSponsor) {
       lastFocusedSponsor.focus();

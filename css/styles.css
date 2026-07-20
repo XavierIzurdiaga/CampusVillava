@@ -327,6 +327,53 @@ h3 {
   padding-top: 44px;
 }
 
+.signup-section {
+  padding-top: 44px;
+}
+
+.signup-main p {
+  max-width: 680px;
+  color: var(--muted);
+}
+
+.signup-actions {
+  margin-top: 24px;
+}
+
+.payment-card {
+  color: var(--white);
+  background: var(--field-dark);
+}
+
+.payment-card .eyebrow,
+.payment-card p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.iban {
+  margin: 22px 0 0;
+  padding: 18px;
+  border-radius: 8px;
+  color: var(--ink) !important;
+  background: var(--white);
+  font-size: clamp(1.05rem, 2.4vw, 1.45rem);
+  font-weight: 800;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.signup-image-section {
+  padding-top: 0;
+}
+
+.signup-image {
+  width: 100%;
+  max-height: 560px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: var(--shadow);
+}
+
 .contact-form-section {
   padding-top: 0;
 }

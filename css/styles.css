@@ -738,6 +738,17 @@ textarea:focus {
   background: var(--field);
 }
 
+.contact-section .steps div {
+  align-items: center;
+}
+
+.contact-section .steps span {
+  display: flex;
+  align-items: center;
+  min-height: 36px;
+  line-height: 1.35;
+}
+
 .aside-note {
   margin: 22px 0 0;
   color: var(--muted);

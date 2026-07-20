@@ -314,6 +314,22 @@ h3 {
   padding-bottom: 0;
 }
 
+.inscription-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  align-items: center;
+  gap: 42px;
+}
+
+.inscription-hero-image {
+  width: 280px;
+  aspect-ratio: 1;
+  border: 10px solid var(--white);
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: var(--shadow);
+}
+
 .split,
 .kids-layout,
 .signup-layout {
@@ -360,18 +376,6 @@ h3 {
   font-weight: 800;
   line-height: 1.25;
   overflow-wrap: anywhere;
-}
-
-.signup-image-section {
-  padding-top: 0;
-}
-
-.signup-image {
-  width: 100%;
-  max-height: 560px;
-  border-radius: 8px;
-  object-fit: cover;
-  box-shadow: var(--shadow);
 }
 
 .contact-form-section {
@@ -790,6 +794,15 @@ textarea:focus {
 
   .hero-visual {
     min-height: 250px;
+  }
+
+  .inscription-hero {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .inscription-hero-image {
+    width: min(100%, 260px);
   }
 
   .intro-grid,

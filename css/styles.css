@@ -64,11 +64,9 @@ a {
 .brand-mark {
   width: 40px;
   height: 40px;
-  display: grid;
-  place-items: center;
+  display: block;
   border-radius: 8px;
-  color: var(--white);
-  background: var(--field-dark);
+  object-fit: contain;
   box-shadow: 0 8px 20px rgba(15, 95, 69, 0.22);
 }
 
@@ -253,6 +251,10 @@ h3 {
 
 .intro-card-body {
   padding: 26px;
+}
+
+.intro-card-link {
+  margin-top: 20px;
 }
 
 .card-icon {

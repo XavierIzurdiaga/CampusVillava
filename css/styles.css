@@ -255,6 +255,10 @@ h3 {
   padding: 26px;
 }
 
+.intro-card-link {
+  margin-top: 20px;
+}
+
 .card-icon {
   display: inline-grid;
   place-items: center;
